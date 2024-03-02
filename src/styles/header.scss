@@ -1,0 +1,88 @@
+header {
+  height: 96px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 $padding-x;
+
+  ul {
+    list-style-type: none;
+    display: flex;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  a {
+    color: inherit;
+  }
+
+  nav {
+    ul {
+      justify-content: space-between;
+    }
+  }
+
+  div {
+    position: relative;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    ul {
+      gap: 20px;
+    }
+  }
+
+  .theme-switcher {
+    --ts-width: 87px ;
+    --ts-height: 41px ;
+
+    // 10 px represente le gap
+    position: absolute;
+    right: calc(-1 * var(--ts-width) - 10px) ;
+
+    width: var(--ts-width);
+    height: var(--ts-height);
+    border-radius: 20px;
+    padding: 0 10px;
+    background-color: $grey;
+    transition: background-color .7s ease;
+    cursor: pointer;
+ 
+    .img {
+      position: relative;
+      z-index: 5;
+    }
+
+    .cursor {
+      left: 0;
+      position: absolute;
+      width: 41px;
+      height: 41px;
+      border-radius: 50%;
+      background-color: $blue;
+      transform: translateX(0);
+      transition: transform .4s ease;
+    }
+  }
+}
+
+.dark {
+  .theme-switcher {
+    background-color: #171717;
+
+    .cursor {
+      transform: translateX(46px);
+    }
+  }
+
+  svg {
+    path {
+      fill: var(--text-color)
+    }
+  }
+}
