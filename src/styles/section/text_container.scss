@@ -1,0 +1,118 @@
+.text-container {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-right: 20px;
+}
+
+.text-container {
+  h3 {
+    font-size: 17px;
+    color: #BF4800;
+  }
+  h2 {
+    font-size: 46px;
+  }
+}
+
+.about {
+  transition: background-color .7s ease;
+  background-color: var(--bg-color);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  .amount {
+    display: block;
+    font-size: 25px;
+  }
+
+  h5, p {
+    font-size: 12px;
+  }
+}
+
+.pod-navigation {
+  display: flex;
+  gap: 15px;
+  height: 250px;
+  position: relative;
+
+}
+
+.item {
+  width: 100%;
+  transition: background-color .7s ease;
+  background-color: var(--bg-color);
+  height: 100%;
+  position: relative;
+  border-radius: 8px;
+
+  .img-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    .air {
+      width: 40%;
+    }
+
+    .finish {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+
+      img {
+        width: 30%;
+      }
+    }
+
+    p {
+      white-space: nowrap;
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .bg {
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    border-radius: 8px;
+    background-color: #F5F5F5;
+    transition: transform .7s ease, background-color .7s ease;
+    transform-origin: bottom;
+    transform: scaleY(0.05);
+  }
+}
+
+.dark .bg {
+  background-color: $black ;
+}
+
+.active {
+  .bg {
+    transform: scaleY(.8);
+  }
+}
+
+// Gestion du curseur 
+.pod-navigation {
+  .cursor {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: calc((100% / 3) - 10px);
+    height: 4px;
+    background-color: $blue;
+  }
+}

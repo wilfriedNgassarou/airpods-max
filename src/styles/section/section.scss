@@ -1,0 +1,29 @@
+.section {
+  position: absolute;
+  top: 0;
+  width: calc(100% - 100px);
+  height: calc(100% - 50px);
+  margin: 25px 50px;
+  overflow: hidden;
+  display: flex;
+  justify-content: end;
+  background-color: rgba($color: $grey, $alpha: .4);
+  transform: translateY(120%);
+  transition: transform .7s ease, background-color .7s ease ;
+  display: flex;
+}
+
+.open {
+  .section {
+    transform: translateY(0);
+  }
+}
+
+.dark {
+  .section {
+    background-color: rgba($color: $black, $alpha: .8);
+  }
+}
+
+@import 'ap_container' ;
+@import 'text_container';

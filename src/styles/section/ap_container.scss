@@ -1,0 +1,10 @@
+.airpods-container {
+  width: calc(60% - 60px);
+  height: calc(100vh - (98px + 50px));
+
+  margin-left: 50px;
+  margin-top: calc(98px + 25px);
+  position: fixed;
+  top: 0;
+  left: 0;
+}

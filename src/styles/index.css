@@ -12,6 +12,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  user-select: none;
 }
 
 #root {
@@ -88,6 +89,200 @@ header .theme-switcher .cursor {
 }
 .dark svg path {
   fill: var(--text-color);
+}
+
+main {
+  position: relative;
+  height: calc(100vh - 98px);
+  overflow-y: hidden;
+}
+
+#hero {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  transform: scale(1);
+  transition: transform 0.7s ease;
+}
+#hero h1 {
+  margin-top: 40px;
+  overflow: hidden;
+  font-size: 16vw;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.open #hero {
+  transform: scale(0.9);
+  position: relative;
+}
+.open #hero h1 {
+  color: #D2D2D7;
+  transition: color 0.7s ease;
+}
+
+.dark #hero h1 {
+  color: #34343A;
+}
+
+.section {
+  position: absolute;
+  top: 0;
+  width: calc(100% - 100px);
+  height: calc(100% - 50px);
+  margin: 25px 50px;
+  overflow: hidden;
+  display: flex;
+  justify-content: end;
+  background-color: rgba(245, 245, 245, 0.4);
+  transform: translateY(120%);
+  transition: transform 0.7s ease, background-color 0.7s ease;
+  display: flex;
+}
+
+.open .section {
+  transform: translateY(0);
+}
+
+.dark .section {
+  background-color: rgba(23, 23, 23, 0.8);
+}
+
+.airpods-container {
+  width: calc(60% - 60px);
+  height: calc(100vh - 148px);
+  margin-left: 50px;
+  margin-top: 123px;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.text-container {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-right: 20px;
+}
+
+.text-container h3 {
+  font-size: 17px;
+  color: #BF4800;
+}
+.text-container h2 {
+  font-size: 46px;
+}
+
+.about {
+  transition: background-color 0.7s ease;
+  background-color: var(--bg-color);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.about .amount {
+  display: block;
+  font-size: 25px;
+}
+.about h5, .about p {
+  font-size: 12px;
+}
+
+.pod-navigation {
+  display: flex;
+  gap: 15px;
+  height: 250px;
+  position: relative;
+}
+
+.item {
+  width: 100%;
+  transition: background-color 0.7s ease;
+  background-color: var(--bg-color);
+  height: 100%;
+  position: relative;
+  border-radius: 8px;
+}
+.item .img-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.item .img-container .air {
+  width: 40%;
+}
+.item .img-container .finish {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.item .img-container .finish img {
+  width: 30%;
+}
+.item .img-container p {
+  white-space: nowrap;
+}
+.item img {
+  width: 100%;
+}
+.item .bg {
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  border-radius: 8px;
+  background-color: #F5F5F5;
+  transition: transform 0.7s ease, background-color 0.7s ease;
+  transform-origin: bottom;
+  transform: scaleY(0.05);
+}
+
+.dark .bg {
+  background-color: #171717;
+}
+
+.active .bg {
+  transform: scaleY(0.8);
+}
+
+.pod-navigation .cursor {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: calc(33.3333333333% - 10px);
+  height: 4px;
+  background-color: #0071E3;
+}
+
+.button {
+  z-index: 11;
+  position: absolute;
+  bottom: 25vh;
+  left: calc(50vw - 75px);
+  width: 150px;
+  height: 53px;
+  transition: opacity 0.7s ease;
+}
+.button span {
+  cursor: pointer;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+  background-color: #0071E3;
+  color: white;
+  font-size: 25px;
 }
 
 /*# sourceMappingURL=index.css.map */
