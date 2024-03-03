@@ -37,6 +37,7 @@ header {
     }
   }
 
+  // Gestion des styles de bases du label flottant
   .theme-switcher {
     --ts-width: 87px ;
     --ts-height: 41px ;
@@ -71,15 +72,19 @@ header {
   }
 }
 
+// Gestion des styles lorsque #root possède la classe dark 
 .dark {
+  // Arrière plan du label flottant
   .theme-switcher {
     background-color: #171717;
 
+    // Transition du label flottant
     .cursor {
       transform: translateX(46px);
     }
   }
 
+  // Couleur des svg 
   svg {
     path {
       fill: var(--text-color)

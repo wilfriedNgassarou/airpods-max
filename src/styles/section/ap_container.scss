@@ -1,10 +1,109 @@
 .airpods-container {
-  width: calc(60% - 60px);
+  // Occupe 60% de la balise section (40% pour le texte) moins la marge x
+  width: calc(60% - 80px);
+  // 98px représente la hauteur de header et 50px représente la marge y
   height: calc(100vh - (98px + 50px));
 
   margin-left: 50px;
   margin-top: calc(98px + 25px);
   position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   top: 0;
   left: 0;
+}
+
+// Gestion des styles sur chaque casque
+.airpods-container {
+
+  .pod-item {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 225px;
+    transition: all .7s ease;
+
+    // Valeur par défaut pour permettre la transition
+    top: calc(50% - 112.5px);
+    left: calc(50% - 100px);
+
+    img {
+      width: 100%;
+      object-fit: cover;
+      transition: transform .7s ease;
+    }
+
+  }
+}
+
+.open {
+
+  .top {
+    top: 0 !important;
+    left: 0 !important;
+    transform: scale(.5);
+    transform-origin: top left;
+  
+    img {
+      transform: rotate(-90deg);
+    }
+  }
+  
+  .bottom {
+    top: calc(100% - 225px) !important;
+    left: 0 !important;
+    transform: scale(.5);
+    transform-origin: bottom left !important;
+    
+    img {
+      transform: rotate(90deg);
+    }
+    
+  }
+  
+  .left {
+    left: -300px !important;
+    top: calc(50% - 112.5px) !important;
+    transform: scale(.5);
+  }
+  
+  .pod-active {
+    transform: scale(2);
+  }
+}
+
+.close {
+  .pod-item {
+    &:nth-of-type(1) {
+      transform: translate(80px, -70px) rotate(-15deg);
+    }
+
+    &:nth-of-type(2) {
+      transform: translate(55vw, 22vh) rotate(140deg);
+    }
+
+    &:nth-of-type(3) {
+      transform: translate(-220px, 70px) rotate(20deg);
+    }
+  }
+}
+
+.middle {
+    .pod-item {
+      &:nth-of-type(1) {
+        transform: translate(80px, -130px) rotate(-15deg);
+      }
+  
+      &:nth-of-type(2) {
+        transform: translate(90vw, 50vh) rotate(140deg);
+        opacity: 0;
+      }
+  
+      &:nth-of-type(3) {
+        transform: translate(-500px, 100px) rotate(20deg);
+      }
+    }
 }

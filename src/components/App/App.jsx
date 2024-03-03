@@ -9,14 +9,15 @@ import AirPContainer from '../Section/AirPContainer';
 export default function App () {
   const [theme, setTheme] = useState('light') ;
   const [animationState, setAnimationState] = useState('close') ;
+  const [activeIndex, setActiveIndex] = useState(0) ;
 
   return (
     <div id='root' className={theme}>
       <Header theme={theme} changeTheme={setTheme} />
       <main className={animationState + ' ' + theme}>
         <Hero />
-        <Section />
-        <AirPContainer />
+        <Section activeIndex={activeIndex} animationState={animationState} changeIndex={setActiveIndex} />
+        <AirPContainer animationState={animationState} activeIndex={activeIndex} />
       </main>
       <Button animationState={animationState} changeAnimationState={setAnimationState} />
     </div>

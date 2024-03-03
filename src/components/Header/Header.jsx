@@ -8,8 +8,6 @@ export default function Header({theme, changeTheme}) {
     changeTheme(theme) ;
   }
 
-  console.log(theme);
-
   return (
     <>
       <header className={theme} >

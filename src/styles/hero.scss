@@ -1,3 +1,4 @@
+// Style de base de la balise qui contient le texte AirPods Max
 #hero {
   width: 100%;
   height: 100%;
@@ -16,6 +17,8 @@
   }
 }
 
+
+// Style relatif à l'animationState open
 .open {
 
   #hero {
@@ -29,6 +32,7 @@
   }
 }
 
+// Style relatif au mode dark
 .dark {
   #hero {
     h1 {

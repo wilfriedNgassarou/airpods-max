@@ -1,0 +1,141 @@
+.btn-navigation {
+  position: absolute;
+  bottom: 0;
+  height: 53px;
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  // background-color: red;
+  cursor: pointer;
+
+  .span:nth-of-type(1) {
+    width: 53px;    color: var(--btn-color);
+    transition: color .7s ease, fill .7s ease, transform .7s ease;
+
+    svg, path {
+      fill: inherit !important;
+    }
+  }
+
+  .span {
+    cursor: pointer;
+    border-radius: 26.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 100%;
+    background-color: $blue;
+    transition: width .7s ease ;
+    color: var(--btn-color);
+    fill: var(--btn-color);
+    transition: color .7s ease, fill .7s ease, width .7s ease;
+  }
+
+  .span:nth-of-type(2) {
+    position: relative;
+    font-size: 25px;
+    overflow: hidden;
+
+    span {
+    cursor: pointer;
+      position: absolute;
+      display: block;
+      transition: transform .7s ease, opacity .55s ease  ;
+
+    }
+    .svg-container {
+      top: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      transition: left .7s ease, transform .7s ease;
+
+      svg, path {
+        fill: inherit !important;
+      }
+    }
+  }
+}
+
+.next {
+  .span:nth-of-type(1) {
+    transform: translateX(80px);
+  }
+  
+    .span:nth-of-type(2) {
+    width: 145px !important;
+
+    span {
+      &:nth-of-type(1) {
+        left: 10px;
+        transform: translateX(0px);
+        opacity: 1;
+      }
+      &:nth-of-type(2) {
+        transform: translateX(150%);
+        opacity: 0;
+      }
+    }
+    
+    .svg-container {
+      // 102 car left = width (145) - svg (33) - marge (10px)
+      left: 102px;
+    }
+    
+  }
+}
+
+.prev-next {
+  .span:nth-of-type(2) {
+    width: 145px !important;
+
+    span {
+      &:nth-of-type(1) {
+        left: 10px;
+        transform: translateX(0px);
+        opacity: 1;
+      }
+      &:nth-of-type(2) {
+        transform: translateX(150%);
+        opacity: 0;
+      }
+    }
+    
+    .svg-container {
+      // 102 car left = width (145) - svg (33) - marge (10px)
+      left: 102px;
+    }
+    
+  }
+}
+
+.prev {
+  .span:nth-of-type(1) {
+    transform: translateX(80px);
+  }
+
+  .span:nth-of-type(2) {
+    width: 170px !important;
+
+    span {
+      &:nth-of-type(1) {
+        transform: translateX(-170%);
+        opacity: 0;
+      }
+      &:nth-of-type(2) {
+        transform: translateX(0px);
+        opacity: 1;
+        right: 10px;
+      }
+    }
+    
+    .svg-container {
+      left: 10px ;
+      transform: rotate(-180deg);
+    }
+    
+  }
+}
+

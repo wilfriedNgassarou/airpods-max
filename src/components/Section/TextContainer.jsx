@@ -1,6 +1,6 @@
 import PodNavigation from "./PodNavigation";
 
-export default function TextContainer() {
+export default function TextContainer({changeIndex}) {
   return (
     <div className="text-container">
       <h3>Gravure gratuite</h3>
@@ -20,7 +20,7 @@ export default function TextContainer() {
           Inclut la taxe sur les primes d’assurance au taux applicable
         </p>
       </div>
-      <PodNavigation />
+      <PodNavigation changeIndex={changeIndex} />
     </div>
   )
 }

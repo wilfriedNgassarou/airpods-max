@@ -1,6 +1,6 @@
-export default function Item({path, title, isActive = false}) {
+export default function Item({index, path, title, isActive = false}) {
   return (
-    <div className={`item ${isActive && 'active'}`}>
+    <div data-index={index} className={`item ${isActive && 'active'}`}>
         <div className="bg"></div>
         <div className="img-container">
           <div className="air">

@@ -1,14 +1,22 @@
 export default function Button({animationState, changeAnimationState}) {
   function handleClick() {
-    changeAnimationState('open')
+    changeAnimationState('middle')
   }
 
-  let style = {opacity: 1} ;
+  let style = {opacity: 1, transform: 'translateY(0px)'} ;
 
   if(animationState == 'open') style.opacity = 0 ;
+  if(animationState == 'open') style.transform = 'translateY(100px)' ;
+  if(animationState == 'middle') style.transform = 'translateY(100px)' ;
+
+  function handleTransitionEnd(e) {
+    if(animationState == 'middle') {
+      changeAnimationState('open')
+    }
+  }
 
   return (
-    <div style={style} className={`button ${animationState}`}>
+    <div onTransitionEnd={handleTransitionEnd} style={style} className={`button ${animationState}`}>
       <span onClick={handleClick}>
         Suivant 
         <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">

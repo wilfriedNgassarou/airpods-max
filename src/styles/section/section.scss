@@ -1,3 +1,4 @@
+// Style de base de la balise qui contient les casques et le texte
 .section {
   position: absolute;
   top: 0;
@@ -13,12 +14,14 @@
   display: flex;
 }
 
+// Style relatif au mode open
 .open {
   .section {
     transform: translateY(0);
   }
 }
 
+// Style relatif au mode dark
 .dark {
   .section {
     background-color: rgba($color: $black, $alpha: .8);
@@ -27,3 +30,4 @@
 
 @import 'ap_container' ;
 @import 'text_container';
+@import 'btn_navigation.scss';
