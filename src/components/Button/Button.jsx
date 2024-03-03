@@ -7,11 +7,18 @@ export default function Button({animationState, changeAnimationState}) {
 
   if(animationState == 'open') style.opacity = 0 ;
   if(animationState == 'open') style.transform = 'translateY(100px)' ;
+  if(animationState == 'before-open') style.opacity = 0 ;
+  if(animationState == 'before-open') style.transform = 'translateY(100px)' ;
   if(animationState == 'middle') style.transform = 'translateY(100px)' ;
 
   function handleTransitionEnd(e) {
     if(animationState == 'middle') {
-      changeAnimationState('open')
+      changeAnimationState('before-open')
+      
+      setTimeout(() => {
+        changeAnimationState('open')
+        
+      }, 100);
     }
   }
 

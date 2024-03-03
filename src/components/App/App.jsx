@@ -5,6 +5,7 @@ import Hero from '../Hero/Hero';
 import Section from '../Section/Section';
 import Button from '../Button/Button';
 import AirPContainer from '../Section/AirPContainer';
+import BtnNavigation from '../Section/BtnNavigation';
 
 export default function App () {
   const [theme, setTheme] = useState('light') ;
@@ -16,8 +17,9 @@ export default function App () {
       <Header theme={theme} changeTheme={setTheme} />
       <main className={animationState + ' ' + theme}>
         <Hero />
-        <Section activeIndex={activeIndex} animationState={animationState} changeIndex={setActiveIndex} />
+        <Section activeIndex={activeIndex} changeIndex={setActiveIndex}/>
         <AirPContainer animationState={animationState} activeIndex={activeIndex} />
+        <BtnNavigation activeIndex={activeIndex} changeIndex={setActiveIndex} />
       </main>
       <Button animationState={animationState} changeAnimationState={setAnimationState} />
     </div>

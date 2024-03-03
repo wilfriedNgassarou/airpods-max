@@ -9,11 +9,10 @@
   transition: transform .7s ease;
 
   h1 {
+    transition: color .7s ease;
     margin-top: 40px;
-    overflow: hidden;
     font-size: 16vw;
     white-space: nowrap;
-    text-overflow: ellipsis;
   }
 }
 
@@ -27,7 +26,6 @@
 
     h1 {
       color: #D2D2D7;
-      transition: color .7s ease;
     }
   }
 }

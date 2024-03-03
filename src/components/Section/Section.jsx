@@ -1,11 +1,9 @@
-import BtnNavigation from "./BtnNavigation";
 import TextContainer from "./TextContainer";
 
-export default function Section ({changeIndex, animationState, activeIndex}) {
+export default function Section ({activeIndex, changeIndex}) {
   return (
     <section className="section">
-      <TextContainer changeIndex={changeIndex} />
-      <BtnNavigation activeIndex={activeIndex} animationState = {animationState}    />
+      <TextContainer activeIndex={activeIndex} changeIndex={changeIndex} />
     </section>
   )
 }

@@ -1,4 +1,4 @@
-export default function BtnNavigation({activeIndex, animationState}) {
+export default function BtnNavigation({activeIndex, changeIndex}) {
   let className ;
 
   if(activeIndex == 0) {
@@ -10,14 +10,17 @@ export default function BtnNavigation({activeIndex, animationState}) {
   }
 
   function handleClick(e) {
-    console.log(e.target);
     
     if(!e.target.closest('.span')) return ;
 
     const target = e.target.closest('.span');
     const action = target.dataset.action ;
 
-    console.log(action);
+    if(action == 'next') {
+      changeIndex(+activeIndex + 1) ;
+    } else if (action == 'prev') {
+      changeIndex(+activeIndex - 1) ;
+    }
   }
 
   return (
@@ -28,7 +31,7 @@ export default function BtnNavigation({activeIndex, animationState}) {
           <path d="M18.2138 22.1422C17.9554 22.1422 17.697 22.047 17.4929 21.843L12.6918 17.0419C12.2974 16.6475 12.2974 15.9946 12.6918 15.6002L17.4929 10.7991C17.8874 10.4046 18.5402 10.4046 18.9346 10.7991C19.3291 11.1935 19.3291 11.8463 18.9346 12.2408L14.8544 16.321L18.9346 20.4013C19.3291 20.7957 19.3291 21.4486 18.9346 21.843C18.7442 22.047 18.4858 22.1422 18.2138 22.1422Z" fill="white"/>
         </svg>
       </span>
-      <span data-action = { activeIndex == 3 ? 'prev' : 'next' } className="span">
+      <span data-action = { activeIndex == 2 ? 'prev' : 'next' } className="span">
         <span>Suivant</span>
         <span>Précédent</span>
         <span className="svg-container">

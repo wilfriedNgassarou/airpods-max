@@ -12,10 +12,11 @@
   transform: translateY(120%);
   transition: transform .7s ease, background-color .7s ease ;
   display: flex;
+  // z-index: 20;
 }
 
 // Style relatif au mode open
-.open {
+.open, .before-open {
   .section {
     transform: translateY(0);
   }

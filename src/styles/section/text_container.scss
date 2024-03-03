@@ -126,11 +126,11 @@
 .open {
   h3, h2, .pod-navigation {
     transform: translateX(0);
-    transition: transform .7s ease .7s;
+    transition: transform .7s ease .4s;
   }
 
   .about {
     opacity: 1;
-    transition: background-color .7s ease, opacity .7s ease .7s;
+    transition: background-color .7s ease, opacity .7s ease .4s;
   }
 }

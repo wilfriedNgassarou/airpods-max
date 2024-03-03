@@ -1,8 +1,7 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Item from "./Item";
 
-export default function PodNavigation({changeIndex}) {
-  const [activeIndex, setActiveIndex] = useState(0) ;
+export default function PodNavigation({changeIndex, activeIndex}) {
   const navigationRef = useRef(null) ;
   const cursorRef = useRef(null)
 
@@ -12,16 +11,10 @@ export default function PodNavigation({changeIndex}) {
     const target = e.target.closest('.item') ;
     const index = target.dataset.index ;
 
-    const cursorStyles = getComputedStyle(cursorRef.current) ;
-    const width = parseInt(cursorStyles.width) ;
-
-    cursorRef.current.style.transform = `translate(${(index * width) + (index * 15)}px)`
 
 
     if(activeIndex == 0  && index == 2) {
-      changeIndex(1)      
-      setActiveIndex(2);
-      
+      changeIndex(1)  
       setTimeout(() => {
         changeIndex(2)   
       }, 350);
@@ -33,15 +26,19 @@ export default function PodNavigation({changeIndex}) {
       
       setTimeout(() => {
         changeIndex(0)
-        setActiveIndex(0)
       }, 350);
 
       return 
     }
-
-    setActiveIndex(index)
     changeIndex(index)
   }
+
+  useEffect(() => {
+    const cursorStyles = getComputedStyle(cursorRef.current) ;
+    const width = parseInt(cursorStyles.width) ;
+
+    cursorRef.current.style.transform = `translate(${(activeIndex * width) + (activeIndex * 15)}px)`
+  })
 
   return (
     <div onClick={handleClick} ref={navigationRef} className="pod-navigation">
