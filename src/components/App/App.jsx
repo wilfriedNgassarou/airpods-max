@@ -6,6 +6,7 @@ import Section from '../Section/Section';
 import Button from '../Button/Button';
 import AirPContainer from '../Section/AirPContainer';
 import BtnNavigation from '../Section/BtnNavigation';
+import Credit from '../Credit/Credit';
 
 export default function App () {
   const [theme, setTheme] = useState('light') ;
@@ -22,6 +23,7 @@ export default function App () {
         <BtnNavigation activeIndex={activeIndex} changeIndex={setActiveIndex} />
       </main>
       <Button animationState={animationState} changeAnimationState={setAnimationState} />
+      <Credit />
     </div>
   )
 }
