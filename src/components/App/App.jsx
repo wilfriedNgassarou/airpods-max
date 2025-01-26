@@ -14,16 +14,23 @@ export default function App () {
   const [activeIndex, setActiveIndex] = useState(0) ;
 
   return (
-    <div id='root' className={theme}>
-      <Header theme={theme} changeTheme={setTheme} />
-      <main className={animationState + ' ' + theme}>
-        <Hero />
-        <Section activeIndex={activeIndex} changeIndex={setActiveIndex}/>
-        <AirPContainer animationState={animationState} activeIndex={activeIndex} />
-        <BtnNavigation activeIndex={activeIndex} changeIndex={setActiveIndex} />
-      </main>
-      <Button animationState={animationState} changeAnimationState={setAnimationState} />
-      <Credit />
-    </div>
+    <>
+      <div className='large-screen'>
+        <span style={{ fontSize: 20 }}>
+          Please, use a large screen
+        </span>
+      </div>
+      <div id='root' className={theme}>
+        <Header theme={theme} changeTheme={setTheme} />
+        <main className={animationState + ' ' + theme}>
+          <Hero />
+          <Section activeIndex={activeIndex} changeIndex={setActiveIndex}/>
+          <AirPContainer animationState={animationState} activeIndex={activeIndex} />
+          <BtnNavigation activeIndex={activeIndex} changeIndex={setActiveIndex} />
+        </main>
+        <Button animationState={animationState} changeAnimationState={setAnimationState} />
+        <Credit />
+      </div>
+    </>
   )
 }
